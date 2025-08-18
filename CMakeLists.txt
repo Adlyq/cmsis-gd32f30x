@@ -39,8 +39,8 @@ add_library(GD32F30x_SDK STATIC ${TARGET_C_SOURCES} ${TARGET_STARTUP_ASM})
 # Shared sources, includes and definitions
 target_compile_definitions(GD32F30x_SDK PUBLIC ${TARGET_C_DEFINES})
 target_include_directories(GD32F30x_SDK
-        PUBLIC ${TARGET_C_INCLUDES}
-        INTERFACE ${TARGET_C_INCLUDES}
+        SYSTEM PUBLIC ${TARGET_C_INCLUDES}
+        SYSTEM INTERFACE ${TARGET_C_INCLUDES}
 )
 
 target_link_directories(GD32F30x_SDK PUBLIC ${TARGET_LIB_DIRECTORIES})
