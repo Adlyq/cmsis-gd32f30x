@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.13)
 
 set(GD32F30x_CMSIS_PATH CMSIS)
 set(GD32F30x_PERIPHERAL_PATH GD32F30x_standard_peripheral)
@@ -49,3 +49,5 @@ target_link_options(GD32F30x_SDK
         PUBLIC "-Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.map,--cref"
 )
 target_compile_options(GD32F30x_SDK PRIVATE -w)
+
+target_link_libraries(BSP_LIB INTERFACE GD32F30x_SDK)
